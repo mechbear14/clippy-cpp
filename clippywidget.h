@@ -16,11 +16,14 @@ public:
 protected:
     void mouseMoveEvent(QMouseEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;
 
 private:
     QPoint dragPosition;
-//    MessageBox *messageBox;
+    MessageBox *messageBox;
+    bool clicked;
+    bool dragging;
 };
 
 #endif // CLIPPYWIDGET_H

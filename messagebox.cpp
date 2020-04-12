@@ -6,7 +6,7 @@
 #include <QVBoxLayout>
 
 MessageBox::MessageBox(QWidget *parent) :
-    QWidget(parent, Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint)
+    QWidget(parent, Qt::Popup | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint)
 {
     QLabel *message{ new QLabel(tr("Hello bear")) };
     QPushButton *okButton{ new QPushButton(tr("OK")) };

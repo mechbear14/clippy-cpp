@@ -1,3 +1,4 @@
+#include <iostream>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QAction>
@@ -7,7 +8,9 @@
 
 ClippyWidget::ClippyWidget(QWidget *parent)
     : QWidget(parent, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint)
-//    , messageBox{ new MessageBox }
+    , messageBox{ new MessageBox(this) }
+    , clicked{false}
+    , dragging{false}
 {
     setAttribute(Qt::WA_NoSystemBackground);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -33,19 +36,29 @@ QSize ClippyWidget::sizeHint() const{
 
 void ClippyWidget::mousePressEvent(QMouseEvent *event){
     if(event->button() == Qt::LeftButton){
-        QPoint topLeft = frameGeometry().topLeft();
-        dragPosition = event->globalPos() - topLeft;
-//        messageBox->move(topLeft - messageBox->frameGeometry().topLeft());
-//        messageBox->show();
+        clicked = true;
+        dragPosition = event->globalPos() - frameGeometry().topLeft();
         event->accept();
     }
 }
 
 void ClippyWidget::mouseMoveEvent(QMouseEvent *event){
     if(event->buttons() & Qt::LeftButton){
+        dragging = true;
         move(event->globalPos() - dragPosition);
         event->accept();
     }
+}
+
+void ClippyWidget::mouseReleaseEvent(QMouseEvent *event){
+    if(clicked && !dragging){
+        QPoint topLeft = frameGeometry().topLeft();
+        messageBox->move(topLeft - QPoint(100, 100));
+        messageBox->show();
+    }
+    clicked = false;
+    dragging = false;
+    event->accept();
 }
 
 void ClippyWidget::resizeEvent(QResizeEvent *event){
