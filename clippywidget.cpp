@@ -8,9 +8,10 @@
 
 ClippyWidget::ClippyWidget(QWidget *parent)
     : QWidget(parent, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint)
-    , messageBox{ new MessageBox(this) }
-    , clicked{false}
-    , dragging{false}
+//    , messageBox{ new MessageBox(this) }
+    , pokedexBox{ new PokedexBox(this) }
+    , clicked{ false }
+    , dragging{ false }
 {
     setAttribute(Qt::WA_NoSystemBackground);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -52,9 +53,13 @@ void ClippyWidget::mouseMoveEvent(QMouseEvent *event){
 
 void ClippyWidget::mouseReleaseEvent(QMouseEvent *event){
     if(clicked && !dragging){
-        QPoint topLeft = frameGeometry().topLeft();
-        messageBox->move(topLeft - QPoint(100, 100));
-        messageBox->show();
+        QPoint topLeft{ frameGeometry().topLeft() };
+//        messageBox->move(topLeft - QPoint(100, 100));
+//        messageBox->show();
+        QRect boxGeometry { pokedexBox->frameGeometry() };
+        QPoint boxSize { QPoint(boxGeometry.width(), boxGeometry.height()) };
+        pokedexBox->move(topLeft - boxSize + QPoint(50, 50));
+        pokedexBox->show();
     }
     clicked = false;
     dragging = false;

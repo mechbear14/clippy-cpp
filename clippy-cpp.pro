@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += network core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,12 +19,14 @@ SOURCES += \
     canvas.cpp \
     clippywidget.cpp \
     main.cpp \
-    messagebox.cpp
+    messagebox.cpp \
+    pokedexbox.cpp
 
 HEADERS += \
     canvas.h \
     clippywidget.h \
-    messagebox.h
+    messagebox.h \
+    pokedexbox.h
 
 FORMS +=
 

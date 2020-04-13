@@ -1,7 +1,8 @@
 #ifndef CLIPPYWIDGET_H
 #define CLIPPYWIDGET_H
 
-#include "messagebox.h"
+//#include "messagebox.h"
+#include "pokedexbox.h"
 
 #include <QWidget>
 
@@ -21,7 +22,8 @@ protected:
 
 private:
     QPoint dragPosition;
-    MessageBox *messageBox;
+//    MessageBox *messageBox;
+    PokedexBox *pokedexBox;
     bool clicked;
     bool dragging;
 };
