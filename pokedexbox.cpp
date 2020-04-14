@@ -19,6 +19,7 @@ PokedexBox::PokedexBox(QWidget *parent)
 
     // Content widget
     QLabel *inputPrompt{ new QLabel("Please input a number between 1 and 718") };
+    inputPrompt->setWordWrap(true);
     inputPrompt->setBuddy(input);
 
     // Buttons
@@ -47,7 +48,7 @@ PokedexBox::PokedexBox(QWidget *parent)
 }
 
 QSize PokedexBox::sizeHint() const{
-    return QSize(20, 150);
+    return QSize(200, 150);
 }
 
 void PokedexBox::validateForm(){
