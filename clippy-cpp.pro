@@ -20,13 +20,15 @@ SOURCES += \
     clippywidget.cpp \
     main.cpp \
     messagebox.cpp \
-    pokedexbox.cpp
+    pokedexbox.cpp \
+    wikibox.cpp
 
 HEADERS += \
     canvas.h \
     clippywidget.h \
     messagebox.h \
-    pokedexbox.h
+    pokedexbox.h \
+    wikibox.h
 
 FORMS +=
 
