@@ -1,11 +1,11 @@
 #ifndef CLIPPYWIDGET_H
 #define CLIPPYWIDGET_H
 
-//#include "messagebox.h"
-//#include "pokedexbox.h"
-#include "wikibox.h"
+//#include "wikibox.h"
 
 #include <QWidget>
+
+#include <WikiBoxPlugin/wikiboxui.h>
 
 class ClippyWidget : public QWidget
 {
@@ -23,9 +23,8 @@ protected:
 
 private:
     QPoint dragPosition;
-//    MessageBox *messageBox;
-//    PokedexBox *pokedexBox;
-    WikiBox *wikiBox;
+//    WikiBox *wikiBox;
+    QWidget *page;
     bool clicked;
     bool dragging;
 };

@@ -16,14 +16,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    WikiBoxPlugin/wikiboxbackend.cpp \
+    WikiBoxPlugin/wikiboxfrontend.cpp \
+    WikiBoxPlugin/wikiboxmain.cpp \
+    WikiBoxPlugin/wikiboxservice.cpp \
+    WikiBoxPlugin/wikiboxstate.cpp \
+    WikiBoxPlugin/wikiboxui.cpp \
     canvas.cpp \
     clippywidget.cpp \
     main.cpp \
     messagebox.cpp \
-    pokedexbox.cpp \
-    wikibox.cpp
+    pokedexbox.cpp
 
 HEADERS += \
+    WikiBoxPlugin/wikiboxbackend.h \
+    WikiBoxPlugin/wikiboxfrontend.h \
+    WikiBoxPlugin/wikiboxmain.h \
+    WikiBoxPlugin/wikiboxservice.h \
+    WikiBoxPlugin/wikiboxstate.h \
+    WikiBoxPlugin/wikiboxui.h \
     canvas.h \
     clippywidget.h \
     messagebox.h \

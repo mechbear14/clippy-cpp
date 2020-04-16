@@ -10,7 +10,8 @@ ClippyWidget::ClippyWidget(QWidget *parent)
     : QWidget(parent, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint)
 //    , messageBox{ new MessageBox(this) }
 //    , pokedexBox{ new PokedexBox(this) }
-    , wikiBox{ new WikiBox(this) }
+//    , wikiBox{ new WikiBox(this) }
+    , page{ new ResultPage(this) }
     , clicked{ false }
     , dragging{ false }
 {
@@ -57,10 +58,9 @@ void ClippyWidget::mouseReleaseEvent(QMouseEvent *event){
         QPoint topLeft{ frameGeometry().topLeft() };
 //        messageBox->move(topLeft - QPoint(100, 100));
 //        messageBox->show();
-        wikiBox->show();
-        QRect boxGeometry { wikiBox->frameGeometry() };
-        QPoint boxSize { QPoint(boxGeometry.width(), boxGeometry.height()) };
-        wikiBox->move(topLeft - boxSize + QPoint(50, 50));
+        page->show();
+        QRect boxGeometry { page->frameGeometry() };
+        page->move(topLeft - QPoint(boxGeometry.width() / 2 - 100, boxGeometry.height() + 10));
     }
     clicked = false;
     dragging = false;
