@@ -6,6 +6,8 @@
 #include <QPushButton>
 #include <QBoxLayout>
 #include <QWidget>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 class WikiBox;
 class WikiStartPage;
@@ -27,14 +29,19 @@ public slots:
     void onSearchCancel();
     void onSearchComplete();
     void onRestart();
+    void onExplore();
 
 private:
     QVBoxLayout *mainLayout;
     WikiStartPage *startPage;
     WikiSearchingPage *searchingPage;
     WikiResultPage *resultPage;
-
     QWidget * currentPage;
+
+    QString queryText;
+    QUrl urlToOpen;
+    QNetworkAccessManager *http;
+    QNetworkReply *response;
 
     void toPage(QWidget * page);
 };
@@ -44,6 +51,8 @@ class WikiStartPage : public QWidget
     Q_OBJECT
 public:
     explicit WikiStartPage(QWidget *parent = nullptr);
+    QString getQueryText();
+    void setMessage(QString message);
 
 signals:
 
@@ -51,6 +60,7 @@ public slots:
 
 private:
     QLabel *title;
+    QLabel *message;
     QLineEdit *query;
     QPushButton *searchButton;
     QPushButton *backButton;
@@ -79,14 +89,16 @@ class WikiResultPage : public QWidget
     Q_OBJECT
 public:
     explicit WikiResultPage(QWidget *parent = nullptr);
-    void setContent(QString resultContent);
+    void setContent(QString title, QString content);
 
 signals:
 
 public slots:
 
 private:
+    QString title;
     QString content;
+    QLabel *titleBox;
     QLabel *contentBox;
     QPushButton *exploreButton;
     QPushButton *backButton;
