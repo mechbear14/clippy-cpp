@@ -2,7 +2,8 @@
 #define CLIPPYWIDGET_H
 
 //#include "messagebox.h"
-#include "pokedexbox.h"
+//#include "pokedexbox.h"
+#include "DictionaryBox/dictmain.h"
 
 #include <QWidget>
 
@@ -23,7 +24,8 @@ protected:
 private:
     QPoint dragPosition;
 //    MessageBox *messageBox;
-    PokedexBox *pokedexBox;
+//    PokedexBox *pokedexBox;
+    DictMain *dictionary;
     bool clicked;
     bool dragging;
 };
