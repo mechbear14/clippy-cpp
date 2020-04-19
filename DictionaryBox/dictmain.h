@@ -1,28 +1,28 @@
 #ifndef DICTMAIN_H
 #define DICTMAIN_H
 
+#include <QWidget>
 #include "dictfrontend.h"
+#include "dicthttp.h"
+#include "dictresultpage.h"
+#include "dictsearchingpage.h"
 #include "dictstartpage.h"
 
-#include <QMouseEvent>
-#include <QWidget>
-
-class DictMain : public QWidget
+class DictMain
 {
-    Q_OBJECT
 public:
     explicit DictMain(QWidget *parent = nullptr);
     void start();
     void setTopLeft(QPoint topLeft);
 
-signals:
-
-public slots:
-
 private:
     DictStartPage *startPage;
+    DictSearchingPage *searchingPage;
+    DictResultPage *resultPage;
     DictFrontend *frontEnd;
+    DictHTTP *httpAPI;
 
+    QWidget *parent;
     QPoint topLeft;
 };
 

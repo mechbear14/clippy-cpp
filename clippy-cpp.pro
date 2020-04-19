@@ -16,8 +16,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    DictionaryBox/dictdatabase.cpp \
     DictionaryBox/dictfrontend.cpp \
+    DictionaryBox/dicthttp.cpp \
     DictionaryBox/dictmain.cpp \
+    DictionaryBox/dictresultpage.cpp \
+    DictionaryBox/dictsearchingpage.cpp \
     DictionaryBox/dictstartpage.cpp \
     canvas.cpp \
     clippywidget.cpp \
@@ -26,8 +30,12 @@ SOURCES += \
     pokedexbox.cpp
 
 HEADERS += \
+    DictionaryBox/dictdatabase.h \
     DictionaryBox/dictfrontend.h \
+    DictionaryBox/dicthttp.h \
     DictionaryBox/dictmain.h \
+    DictionaryBox/dictresultpage.h \
+    DictionaryBox/dictsearchingpage.h \
     DictionaryBox/dictstartpage.h \
     canvas.h \
     clippywidget.h \
