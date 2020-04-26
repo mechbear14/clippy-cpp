@@ -61,16 +61,8 @@ void ClippyWidget::mouseReleaseEvent(QMouseEvent *event)
     if (clicked && !dragging)
     {
         QPoint topLeft{frameGeometry().topLeft()};
-<<<<<<< HEAD
-        //        messageBox->move(topLeft - QPoint(100, 100));
-        //        messageBox->show();
-        page->show();
-        QRect boxGeometry{page->frameGeometry()};
-        page->move(topLeft - QPoint(boxGeometry.width() / 2 - 100, boxGeometry.height() + 10));
-=======
         dictionary->setTopLeft(topLeft);
         dictionary->start();
->>>>>>> dictionary
     }
     clicked = false;
     dragging = false;

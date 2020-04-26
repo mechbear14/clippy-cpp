@@ -40,8 +40,7 @@ HEADERS += \
     canvas.h \
     clippywidget.h \
     messagebox.h \
-    pokedexbox.h \
-    wikibox.h
+    pokedexbox.h
 
 FORMS +=
 

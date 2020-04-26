@@ -69,6 +69,8 @@ void DictStartPage::onInput(const QString & text){
     if(message->isVisible()){
         message->hide();
     }
+    searchButton->setDisabled(false);
+    adjustSize();
 }
 
 void DictStartPage::onBack(){

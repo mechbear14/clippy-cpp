@@ -66,6 +66,7 @@ void DictResultPage::onResult(const QJsonObject & result,
         detailButton->setText("Go to Google");
     }
     this->nextURL = nextURL;
+    adjustSize();
 }
 
 void DictResultPage::onExplore(){

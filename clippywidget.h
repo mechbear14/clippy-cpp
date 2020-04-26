@@ -7,8 +7,6 @@
 
 #include <QWidget>
 
-#include <WikiBoxPlugin/wikiboxui.h>
-
 class ClippyWidget : public QWidget
 {
     Q_OBJECT
