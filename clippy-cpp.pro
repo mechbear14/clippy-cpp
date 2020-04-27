@@ -16,6 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+#    Clippy/clippygif.cpp \
+    Clippy/abstractclippystate.cpp \
+    Clippy/clippystate.cpp \
     DictionaryBox/dictdatabase.cpp \
     DictionaryBox/dictfrontend.cpp \
     DictionaryBox/dicthttp.cpp \
@@ -23,13 +26,18 @@ SOURCES += \
     DictionaryBox/dictresultpage.cpp \
     DictionaryBox/dictsearchingpage.cpp \
     DictionaryBox/dictstartpage.cpp \
+    Clippy/clippymain.cpp \
+    Clippy/clippywidget.cpp \
     canvas.cpp \
-    clippywidget.cpp \
+#    clippywidget.cpp \
     main.cpp \
     messagebox.cpp \
     pokedexbox.cpp
 
 HEADERS += \
+    Clippy/abstractclippystate.h \
+#    Clippy/clippygif.h \
+    Clippy/clippystate.h \
     DictionaryBox/dictdatabase.h \
     DictionaryBox/dictfrontend.h \
     DictionaryBox/dicthttp.h \
@@ -37,8 +45,10 @@ HEADERS += \
     DictionaryBox/dictresultpage.h \
     DictionaryBox/dictsearchingpage.h \
     DictionaryBox/dictstartpage.h \
+    Clippy/clippymain.h \
+    Clippy/clippywidget.h \
     canvas.h \
-    clippywidget.h \
+#    clippywidget.h \
     messagebox.h \
     pokedexbox.h
 
@@ -48,3 +58,6 @@ FORMS +=
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Clippy/animations.qrc

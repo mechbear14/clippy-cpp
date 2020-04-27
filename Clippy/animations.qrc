@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/normal">
+        <file alias="idle.gif">assets/clippy-base.gif</file>
+        <file alias="approach.gif">assets/clippy-get-close.gif</file>
+        <file alias="left.gif">assets/clippy-look-left.gif</file>
+        <file alias="right.gif">assets/clippy-look-right.gif</file>
+        <file alias="twinkle.gif">assets/clippy-twinkle.gif</file>
+    </qresource>
+</RCC>
